@@ -43,6 +43,8 @@ A public backlog of AI agents, marketing-tech tools and B2B calculators I'm plan
 
 ## 🚀 Already shipped
 
+- **[Talk to Your Analytics](https://github.com/zov911/talk-to-your-analytics)**: MCP server, ask Claude why leads dropped across GA4, Search Console and HubSpot
+- **[Release Launch Kit](https://github.com/zov911/release-launch-kit)** ([demo](https://zov911.github.io/release-launch-kit/)): changelog → full launch kit
 - **[AI Lead Qualification Agent](https://github.com/zov911/ai-lead-qualification-agent)** ([demo](https://zov911.github.io/ai-lead-qualification-agent/)): Vector + LLM lead scoring with CRM webhooks
 - **[Marketing Signal Dashboard](https://github.com/zov911/marketing-signal-dashboard)** ([demo](https://zov911.github.io/marketing-signal-dashboard/)): GA4, Search Console, Bing, sGTM and attribution
 - **[FINTRAC Report Checker](https://github.com/zov911/fintrac-report-checker)** ([demo](https://zov911.github.io/fintrac-report-checker/)): Regulatory lead magnet

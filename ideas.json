@@ -231,6 +231,20 @@
   ],
   "shipped": [
     {
+      "title": "Talk to Your Analytics (MCP)",
+      "url": "https://github.com/zov911/talk-to-your-analytics",
+      "repo": "https://github.com/zov911/talk-to-your-analytics",
+      "theme": "ads",
+      "note": "Ask Claude why leads dropped: GA4 + Search Console + HubSpot"
+    },
+    {
+      "title": "Release Launch Kit",
+      "url": "https://zov911.github.io/release-launch-kit/",
+      "repo": "https://github.com/zov911/release-launch-kit",
+      "theme": "sales",
+      "note": "Changelog → blog, email, LinkedIn, X, in-app, sales brief"
+    },
+    {
       "title": "AI Lead Qualification Agent",
       "url": "https://zov911.github.io/ai-lead-qualification-agent/",
       "repo": "https://github.com/zov911/ai-lead-qualification-agent",
