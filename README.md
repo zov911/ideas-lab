@@ -58,4 +58,4 @@ The board (`index.html`) reads `ideas.json` and live 👍 counts from the GitHub
 
 ---
 
-© 2026 zov911 · [zov911.com](https://zov911.com) · [@zov911](https://x.com/zov911)
+© zov911 · [zov911.com](https://zov911.com) · [@zov911](https://x.com/zov911)
