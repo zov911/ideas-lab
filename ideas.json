@@ -1,0 +1,276 @@
+{
+  "themes": {
+    "aeo": {
+      "label": "AI visibility",
+      "githubLabel": "theme: AI visibility",
+      "color": "#06b6d4",
+      "icon": "🔭"
+    },
+    "sales": {
+      "label": "Sales AI",
+      "githubLabel": "theme: sales AI",
+      "color": "#22c55e",
+      "icon": "🤝"
+    },
+    "ads": {
+      "label": "Ads & tracking",
+      "githubLabel": "theme: ads & tracking",
+      "color": "#f59e0b",
+      "icon": "🎯"
+    },
+    "calc": {
+      "label": "B2B calculators",
+      "githubLabel": "theme: calculators",
+      "color": "#ec4899",
+      "icon": "🧮"
+    }
+  },
+  "ideas": [
+    {
+      "id": "ai-answer-visibility",
+      "theme": "aeo",
+      "status": "speccing",
+      "effort": "M",
+      "title": "AI Answer Visibility Tracker",
+      "pitch": "See how often ChatGPT, Perplexity, Claude, Gemini and Google AI Overviews mention your brand, and who they recommend instead.",
+      "problem": "Buyers now ask AI assistants for vendor shortlists. Most marketing teams have no idea whether they're named, what's said about them, or which sources the answers cite.",
+      "how": "Run a fixed prompt set (category, comparison and problem queries) on a schedule across AI APIs. Extract brand mentions, sentiment, position and cited URLs with structured outputs. Track share of voice over time.",
+      "who": "B2B SaaS and industrial marketing teams, SEO/AEO agencies",
+      "stack": [
+        "Claude API",
+        "OpenAI API",
+        "Perplexity API",
+        "Node",
+        "Chart.js"
+      ],
+      "issue": 1
+    },
+    {
+      "id": "aeo-content-gaps",
+      "theme": "aeo",
+      "status": "idea",
+      "effort": "M",
+      "title": "AEO Content Gap Finder",
+      "pitch": "Find the questions AI assistants answer about your category without citing you, and get briefs to fix it.",
+      "problem": "Classic keyword tools don't show which pages AI answers pull from, or which questions you're missing.",
+      "how": "Combine Search Console queries, 'People also ask' style question mining and AI answer citations. Cluster with embeddings, score gaps against your existing pages, and generate content briefs.",
+      "who": "Content and SEO teams",
+      "stack": [
+        "Search Console API",
+        "Embeddings",
+        "Claude API"
+      ],
+      "issue": 2
+    },
+    {
+      "id": "ai-crawler-audit",
+      "theme": "aeo",
+      "status": "idea",
+      "effort": "S",
+      "title": "AI Crawler & llms.txt Audit",
+      "pitch": "One-click check: can GPTBot, ClaudeBot, PerplexityBot and Google-Extended reach your content? Generates an llms.txt.",
+      "problem": "Sites often block AI crawlers by accident (robots.txt, WAF rules) or never decide on a policy at all.",
+      "how": "Fetch robots.txt, test user agents against key URLs, detect WAF blocks and JS-only rendering, then output a policy recommendation plus a generated llms.txt.",
+      "who": "Webmasters, SEO consultants",
+      "stack": [
+        "Node",
+        "Cloudflare Workers"
+      ],
+      "issue": 3
+    },
+    {
+      "id": "call-to-crm-agent",
+      "theme": "sales",
+      "status": "speccing",
+      "effort": "M",
+      "title": "Call-to-CRM Agent",
+      "pitch": "Sales call transcript in, MEDDIC fields, next steps and follow-up email out, written straight to the CRM.",
+      "problem": "Reps skip CRM updates after calls, so pipeline data and forecasts go stale.",
+      "how": "Take transcripts from Zoom, Gong or Fireflies via webhook. Claude extracts MEDDIC/BANT fields, risks and next steps with evidence quotes. A human-approve step in Slack, then a HubSpot or Pipedrive update.",
+      "who": "B2B sales teams, RevOps",
+      "stack": [
+        "Claude API",
+        "Slack API",
+        "HubSpot API",
+        "Node"
+      ],
+      "issue": 4
+    },
+    {
+      "id": "rfp-agent",
+      "theme": "sales",
+      "status": "idea",
+      "effort": "L",
+      "title": "RFP & Security Questionnaire Agent",
+      "pitch": "Draft answers to RFPs and security questionnaires from your own docs, with citations, in minutes instead of days.",
+      "problem": "Questionnaires (SIG, CAIQ, custom RFPs) eat days of SE and security team time and stall deals.",
+      "how": "RAG over policies, past answers and product docs. Claude drafts each answer with cited sources and a confidence score. Low-confidence answers are routed to an owner. Export back to Excel or Word.",
+      "who": "SaaS sales engineers, security and compliance teams",
+      "stack": [
+        "Claude API",
+        "Embeddings",
+        "pgvector",
+        "xlsx"
+      ],
+      "issue": 5
+    },
+    {
+      "id": "account-brief",
+      "theme": "sales",
+      "status": "idea",
+      "effort": "S",
+      "title": "Account Research Brief",
+      "pitch": "Type a company domain and get a one-page pre-meeting brief: what they do, likely priorities, recent news and talking points.",
+      "problem": "Reps walk into first calls under-prepared, or spend 30 minutes researching each account.",
+      "how": "Crawl the website, careers page and public news with web search. Claude summarizes into a fixed brief template mapped to your ICP and value props.",
+      "who": "SDRs, AEs, founders doing sales",
+      "stack": [
+        "Claude API (web search)",
+        "Node"
+      ],
+      "issue": 6
+    },
+    {
+      "id": "ads-waste-detector",
+      "theme": "ads",
+      "status": "speccing",
+      "effort": "M",
+      "title": "Google Ads Wasted-Spend Detector",
+      "pitch": "An LLM reads your search-terms report and flags irrelevant queries burning budget, with ready-to-upload negative keywords.",
+      "problem": "Broad match and Performance Max surface thousands of search terms. Nobody reviews them, and 10–30% of spend often goes to irrelevant queries.",
+      "how": "Pull search terms via the Google Ads API (or CSV). Classify relevance against your offer with structured outputs, estimate wasted spend, cluster into negative-keyword lists, and export to Ads Editor.",
+      "who": "PPC managers, agencies, B2B advertisers",
+      "stack": [
+        "Google Ads API",
+        "Claude API",
+        "Node"
+      ],
+      "issue": 7
+    },
+    {
+      "id": "consent-crawler",
+      "theme": "ads",
+      "status": "idea",
+      "effort": "M",
+      "title": "Consent Compliance Crawler",
+      "pitch": "Crawls your site like a new EU visitor and reports every tag and cookie that fires before consent.",
+      "problem": "Misconfigured CMPs and Consent Mode v2 setups leak data before consent, which creates regulatory risk and inflates or breaks ad data.",
+      "how": "Headless browser visits key pages in deny/accept scenarios, records network requests and cookies, checks Consent Mode v2 signals, and maps violations to vendors with screenshots.",
+      "who": "Privacy, marketing ops, analytics agencies",
+      "stack": [
+        "Playwright",
+        "Node",
+        "GTM"
+      ],
+      "issue": 8
+    },
+    {
+      "id": "utm-linter",
+      "theme": "ads",
+      "status": "idea",
+      "effort": "S",
+      "title": "UTM Governance Linter",
+      "pitch": "A UTM builder with enforced naming rules, plus a linter that finds the messy campaign tags breaking your GA4 channel reports.",
+      "problem": "'Facebook' vs 'facebook' vs 'fb' splits data, and bad UTMs push traffic into Unassigned in GA4.",
+      "how": "Shared taxonomy config, a builder UI, and a GA4 API scan that groups near-duplicate source/medium/campaign values and suggests fixes and channel-group rules.",
+      "who": "Marketing ops, agencies",
+      "stack": [
+        "GA4 Data API",
+        "Vanilla JS"
+      ],
+      "issue": 9
+    },
+    {
+      "id": "quote-configurator",
+      "theme": "calc",
+      "status": "idea",
+      "effort": "M",
+      "title": "B2B Pricing & Quote Configurator",
+      "pitch": "A template for interactive product configurators that output a quote range and a qualified lead, not a 'contact us' dead end.",
+      "problem": "Complex B2B products hide pricing, and buyers who want a ballpark leave.",
+      "how": "JSON-driven options, rules and price tables. Live quote range, PDF summary, and the lead plus configuration pushed to the CRM. Brandable per client.",
+      "who": "Manufacturers, industrial distributors, SaaS with tiered pricing",
+      "stack": [
+        "Vanilla JS",
+        "PDF",
+        "CRM webhooks"
+      ],
+      "issue": 10
+    },
+    {
+      "id": "event-roi",
+      "theme": "calc",
+      "status": "idea",
+      "effort": "S",
+      "title": "Event & Webinar ROI Calculator",
+      "pitch": "Prove (or kill) trade shows and webinars: cost per meeting, pipeline influenced and payback, before and after the event.",
+      "problem": "Events are among the biggest B2B budget lines and the least measured.",
+      "how": "Inputs for costs, booth traffic, meetings and conversion rates, with benchmarks by industry. Pre-event targets vs post-event actuals, exportable for finance.",
+      "who": "Field and event marketers, CMOs",
+      "stack": [
+        "Vanilla JS",
+        "Chart.js"
+      ],
+      "issue": 11
+    },
+    {
+      "id": "cost-of-delay",
+      "theme": "calc",
+      "status": "idea",
+      "effort": "S",
+      "title": "Cost-of-Delay Calculator",
+      "pitch": "Shows prospects what waiting another quarter costs them. The calculator that unsticks deals.",
+      "problem": "The real competitor in B2B deals is 'do nothing'. Champions need a number to create urgency.",
+      "how": "Value drivers per product (hours saved, revenue lift, risk avoided), monthly cost of inaction, and a shareable link or PDF for the champion's internal business case.",
+      "who": "SaaS and services sales teams",
+      "stack": [
+        "Vanilla JS"
+      ],
+      "issue": 12
+    }
+  ],
+  "shipped": [
+    {
+      "title": "AI Lead Qualification Agent",
+      "url": "https://zov911.github.io/ai-lead-qualification-agent/",
+      "repo": "https://github.com/zov911/ai-lead-qualification-agent",
+      "theme": "sales",
+      "note": "Vector + LLM lead scoring with CRM webhooks"
+    },
+    {
+      "title": "Marketing Signal Dashboard",
+      "url": "https://zov911.github.io/marketing-signal-dashboard/",
+      "repo": "https://github.com/zov911/marketing-signal-dashboard",
+      "theme": "ads",
+      "note": "GA4, Search Console, Bing, sGTM and attribution"
+    },
+    {
+      "title": "FINTRAC Report Checker",
+      "url": "https://zov911.github.io/fintrac-report-checker/",
+      "repo": "https://github.com/zov911/fintrac-report-checker",
+      "theme": "calc",
+      "note": "Regulatory lead magnet"
+    },
+    {
+      "title": "Generator Sizing Calculator",
+      "url": "https://zov911.github.io/generator-sizing-calculator/",
+      "repo": "https://github.com/zov911/generator-sizing-calculator",
+      "theme": "calc",
+      "note": "Engineering sizing with buyer and sales views"
+    },
+    {
+      "title": "DFIR Investigation Builder",
+      "url": "https://zov911.github.io/dfir-investigation-builder/",
+      "repo": "https://github.com/zov911/dfir-investigation-builder",
+      "theme": "calc",
+      "note": "Forensic triage planner"
+    },
+    {
+      "title": "B2B Revenue Engine",
+      "url": "https://zov911.github.io/b2b-revenue-engine/",
+      "repo": "https://github.com/zov911/b2b-revenue-engine",
+      "theme": "sales",
+      "note": "Sales × marketing process map"
+    }
+  ]
+}

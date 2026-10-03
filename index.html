@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ideas Lab — AI Agents &amp; Marketing Tools Roadmap</title>
+<meta name="description" content="A public backlog of AI agents, marketing-tech tools and B2B calculators. Vote for what gets built next, suggest your own, or get one built for your business. By zov911.">
+<meta name="author" content="zov911">
+<meta property="og:title" content="Ideas Lab: vote for what gets built next">
+<meta property="og:description" content="AI visibility trackers, sales AI agents, ads & tracking audits and B2B calculators: a public roadmap.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#0b0b10">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23111'/%3E%3Ctext x='16' y='23' font-size='18' text-anchor='middle'%3E💡%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0b0b10;--panel:#13131b;--panel2:#1a1a24;--line:#262633;--line2:#34344a;--text:#ececf3;--muted:#9696aa;--dim:#666678;--accent:#facc15;--r:14px}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:Inter,system-ui,sans-serif;font-size:14px;line-height:1.55}
+button{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+a{color:inherit}
+.wrap{max-width:1320px;margin:0 auto;padding:0 18px 40px}
+.glow{position:fixed;inset:0;pointer-events:none;background:radial-gradient(800px 380px at 10% -10%,rgba(250,204,21,.10),transparent 60%),radial-gradient(700px 360px at 90% 0%,rgba(6,182,212,.10),transparent 60%)}
+.wrap>*{position:relative}
+header.top{display:flex;align-items:center;gap:10px;padding:18px 0;border-bottom:1px solid var(--line)}
+header.top b{font-size:16px}
+header.top .r{margin-left:auto;display:flex;gap:8px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--line2);background:var(--panel);border-radius:10px;padding:8px 14px;font-weight:600;text-decoration:none;font-size:13px;cursor:pointer;white-space:nowrap}
+.btn:hover{border-color:var(--muted)}
+.btn.primary{background:var(--accent);color:#111;border-color:var(--accent)}
+.hero{padding:38px 0 22px;display:grid;grid-template-columns:1.3fr 1fr;gap:28px;align-items:end}
+@media(max-width:900px){.hero{grid-template-columns:1fr}}
+.kicker{font-size:12px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;color:var(--accent)}
+h1{font-size:clamp(30px,4.6vw,50px);line-height:1.05;letter-spacing:-.02em;margin:10px 0 12px}
+.lede{color:var(--muted);font-size:15.5px;max-width:640px}
+.how{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.how div{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:12px}
+.how b{display:block;font-size:20px}.how span{font-size:12px;color:var(--muted)}
+.filters{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:8px 0 16px}
+.chip{border:1px solid var(--line2);background:var(--panel);border-radius:999px;padding:6px 12px;font-size:12.5px;font-weight:600;cursor:pointer;color:var(--muted)}
+.chip[aria-pressed="true"]{color:var(--text);border-color:var(--c,var(--accent));background:color-mix(in srgb,var(--c,var(--accent)) 14%,transparent)}
+.sort{margin-left:auto;color:var(--dim);font-size:12px}
+.board{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;align-items:start}
+@media(max-width:1100px){.board{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:620px){.board{grid-template-columns:1fr}}
+.col{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:10px}
+.col h2{font-size:12px;letter-spacing:1px;text-transform:uppercase;color:var(--muted);display:flex;justify-content:space-between;padding:4px 6px 10px}
+.col h2 span{color:var(--dim)}
+.card{background:var(--panel2);border:1px solid var(--line);border-left:3px solid var(--c);border-radius:11px;padding:12px;margin-bottom:8px;cursor:pointer;transition:border-color .15s,transform .15s}
+.card:hover{border-color:var(--line2);border-left-color:var(--c);transform:translateY(-1px)}
+.card .t{font-weight:700;font-size:14px;line-height:1.3}
+.card .p{color:var(--muted);font-size:12.5px;margin-top:4px}
+.meta{display:flex;gap:6px;align-items:center;margin-top:10px;flex-wrap:wrap}
+.tag{font-size:10.5px;font-weight:700;border-radius:6px;padding:2px 7px;background:color-mix(in srgb,var(--c) 16%,transparent);color:var(--c)}
+.eff{font-size:10.5px;color:var(--dim);border:1px solid var(--line2);border-radius:6px;padding:1px 6px}
+.votes{margin-left:auto;font-size:12px;font-weight:700;color:var(--text)}
+.empty{color:var(--dim);font-size:12.5px;padding:10px 6px}
+.shipped .card{cursor:default}
+.shipped a.card{display:block;text-decoration:none}
+dialog{background:var(--panel);color:var(--text);border:1px solid var(--line2);border-radius:16px;width:min(640px,94vw);padding:0}
+dialog::backdrop{background:rgba(0,0,0,.65)}
+.dlg{padding:22px}
+.dlg h3{font-size:22px;letter-spacing:-.01em;margin:6px 0 4px}
+.dlg .p{color:var(--muted)}
+.dlg h4{font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--dim);margin:16px 0 4px}
+.stack{display:flex;gap:6px;flex-wrap:wrap}
+.stack span{font-size:12px;border:1px solid var(--line2);border-radius:6px;padding:2px 8px;color:var(--muted)}
+.dlg .acts{display:flex;gap:8px;flex-wrap:wrap;margin-top:20px}
+.x{float:right;background:none;border:none;font-size:20px;color:var(--muted);cursor:pointer}
+.cta{margin-top:22px;border-radius:16px;padding:24px;background:linear-gradient(135deg,rgba(250,204,21,.16),rgba(6,182,212,.08));border:1px solid rgba(250,204,21,.35);display:flex;justify-content:space-between;align-items:center;gap:18px;flex-wrap:wrap}
+.cta h2{font-size:22px}.cta p{color:var(--muted);max-width:640px;margin-top:4px}
+footer{margin-top:22px;padding-top:14px;border-top:1px solid var(--line);font-size:12px;color:var(--dim);display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
+footer a{color:var(--muted)}
+@media (prefers-reduced-motion: reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<div class="glow"></div>
+<div class="wrap">
+  <header class="top">
+    <span style="font-size:22px">💡</span><b>Ideas Lab</b><span style="color:var(--dim)">by zov911</span>
+    <div class="r">
+      <a class="btn" href="https://github.com/zov911/ideas-lab/issues/new?template=idea.yml" target="_blank" rel="noopener">＋ Suggest an idea</a>
+      <a class="btn primary" href="https://zov911.com" target="_blank" rel="noopener">Get one built →</a>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div>
+      <div class="kicker">Public roadmap · build in public</div>
+      <h1>Vote for the next AI agent or marketing tool I build</h1>
+      <p class="lede">These are tools I think growth, sales and marketing teams need: AI-visibility trackers, sales agents, ads and tracking audits, B2B calculators. Each idea is a GitHub issue. 👍 the ones you want, comment with your use case, or suggest your own. The most-voted ideas get built and open-sourced here.</p>
+    </div>
+    <div class="how" id="stats"></div>
+  </section>
+
+  <div class="filters" id="filters"></div>
+  <div class="board" id="board"></div>
+
+  <aside class="cta">
+    <div><h2>Need one of these for your business now?</h2><p>I build custom AI agents, calculators, dashboards and tracking setups, wired into your CRM and data, from the first workshop to production.</p></div>
+    <a class="btn primary" href="https://zov911.com" target="_blank" rel="noopener">Reach out → zov911.com</a>
+  </aside>
+
+  <footer>
+    <div>© <span id="yr">2026</span> zov911 · <a href="https://github.com/zov911" target="_blank" rel="noopener">GitHub</a> · <a href="https://zov911.com" target="_blank" rel="noopener">zov911.com</a></div>
+    <div id="voteNote">Votes = 👍 reactions on each GitHub issue.</div>
+  </footer>
+</div>
+
+<dialog id="dlg"><div class="dlg" id="dlgBody"></div></dialog>
+
+<script type="module">
+const $ = id => document.getElementById(id);
+const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const REPO = 'zov911/ideas-lab';
+const COLS = [['idea', '💭 Ideas'], ['speccing', '📐 Speccing'], ['building', '🔨 Building'], ['shipped', '🚀 Shipped']];
+const EFFORT = { S: 'Small · days', M: 'Medium · 1–2 weeks', L: 'Large · weeks' };
+let data, votes = {}, filter = 'all';
+$('yr').textContent = new Date().getFullYear();
+
+async function loadVotes() {
+  // Public GitHub API (no auth): 60 requests/hour per visitor IP. Cached for 10 minutes.
+  try {
+    const cached = JSON.parse(sessionStorage.getItem('ideas-votes') || 'null');
+    if (cached && Date.now() - cached.t < 600000) return cached.v;
+  } catch {}
+  try {
+    const res = await fetch(`https://api.github.com/repos/${REPO}/issues?labels=idea&state=all&per_page=100`, { headers: { accept: 'application/vnd.github+json' } });
+    if (!res.ok) throw new Error(res.status);
+    const v = Object.fromEntries((await res.json()).map(i => [i.number, { up: i.reactions?.['+1'] || 0, comments: i.comments || 0 }]));
+    try { sessionStorage.setItem('ideas-votes', JSON.stringify({ t: Date.now(), v })); } catch {}
+    return v;
+  } catch {
+    $('voteNote').textContent = 'Live vote counts unavailable right now (GitHub rate limit). Open an issue to vote.';
+    return {};
+  }
+}
+
+function card(idea) {
+  const t = data.themes[idea.theme];
+  const v = votes[idea.issue];
+  return `<div class="card" role="button" tabindex="0" data-id="${idea.id}" style="--c:${t.color}">
+    <div class="t">${esc(idea.title)}</div>
+    <div class="p">${esc(idea.pitch)}</div>
+    <div class="meta"><span class="tag">${t.icon} ${esc(t.label)}</span><span class="eff">${idea.effort}</span>
+      <span class="votes" title="👍 votes · comments">👍 ${v ? v.up : '–'}${v?.comments ? ` · 💬 ${v.comments}` : ''}</span></div>
+  </div>`;
+}
+
+function render() {
+  const list = data.ideas.filter(i => filter === 'all' || i.theme === filter)
+    .sort((a, b) => (votes[b.issue]?.up || 0) - (votes[a.issue]?.up || 0));
+  const shipped = data.shipped.filter(s => filter === 'all' || s.theme === filter);
+  $('board').innerHTML = COLS.map(([status, label]) => {
+    if (status === 'shipped') {
+      return `<section class="col shipped"><h2>${label}<span>${shipped.length}</span></h2>${shipped.map(s => {
+        const t = data.themes[s.theme];
+        return `<a class="card" href="${s.url}" target="_blank" rel="noopener" style="--c:${t.color}"><div class="t">${esc(s.title)} ↗</div><div class="p">${esc(s.note)}</div><div class="meta"><span class="tag">${t.icon} ${esc(t.label)}</span><span class="eff">Live demo</span></div></a>`;
+      }).join('') || '<div class="empty">Nothing here yet</div>'}</section>`;
+    }
+    const items = list.filter(i => i.status === status);
+    return `<section class="col"><h2>${label}<span>${items.length}</span></h2>${items.map(card).join('') || '<div class="empty">Nothing here yet. Vote to move ideas along.</div>'}</section>`;
+  }).join('');
+}
+
+function renderChrome() {
+  const total = Object.values(votes).reduce((s, v) => s + v.up, 0);
+  $('stats').innerHTML = [[data.ideas.length, 'ideas in the backlog'], [data.shipped.length, 'tools already shipped'], [Object.keys(votes).length ? total : '–', 'community votes']]
+    .map(([b, s]) => `<div><b>${b}</b><span>${s}</span></div>`).join('');
+  $('filters').innerHTML = `<button class="chip" data-f="all" aria-pressed="${filter === 'all'}">All themes</button>` +
+    Object.entries(data.themes).map(([k, t]) => `<button class="chip" data-f="${k}" style="--c:${t.color}" aria-pressed="${filter === k}">${t.icon} ${esc(t.label)}</button>`).join('') +
+    `<span class="sort">Sorted by votes</span>`;
+}
+
+function open(id) {
+  const i = data.ideas.find(x => x.id === id); if (!i) return;
+  const t = data.themes[i.theme];
+  const issueUrl = `https://github.com/${REPO}/issues/${i.issue}`;
+  $('dlgBody').innerHTML = `<button class="x" aria-label="Close" onclick="this.closest('dialog').close()">×</button>
+    <span class="tag" style="--c:${t.color}">${t.icon} ${esc(t.label)}</span> <span class="eff">${EFFORT[i.effort]}</span>
+    <h3>${esc(i.title)}</h3><p class="p">${esc(i.pitch)}</p>
+    <h4>Problem</h4><p>${esc(i.problem)}</p>
+    <h4>How it would work</h4><p>${esc(i.how)}</p>
+    <h4>Who it's for</h4><p>${esc(i.who)}</p>
+    <h4>Stack</h4><div class="stack">${i.stack.map(s => `<span>${esc(s)}</span>`).join('')}</div>
+    <div class="acts"><a class="btn" href="${issueUrl}" target="_blank" rel="noopener">👍 Vote on GitHub (${votes[i.issue]?.up ?? '–'})</a>
+      <a class="btn" href="${issueUrl}#new_comment_field" target="_blank" rel="noopener">💬 Add your use case</a>
+      <a class="btn primary" href="https://zov911.com" target="_blank" rel="noopener">Build this for me →</a></div>`;
+  $('dlg').showModal();
+}
+
+document.addEventListener('click', e => {
+  const f = e.target.closest('[data-f]'); if (f) { filter = f.dataset.f; renderChrome(); render(); return; }
+  const c = e.target.closest('.card[data-id]'); if (c) open(c.dataset.id);
+});
+document.addEventListener('keydown', e => { const c = e.target.closest?.('.card[data-id]'); if (c && (e.key === 'Enter' || e.key === ' ')) { e.preventDefault(); open(c.dataset.id); } });
+$('dlg').addEventListener('click', e => { if (e.target === $('dlg')) $('dlg').close(); });
+
+data = await fetch('ideas.json').then(r => r.json());
+renderChrome(); render();
+votes = await loadVotes();
+renderChrome(); render();
+</script>
+</body>
+</html>
